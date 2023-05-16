@@ -9,21 +9,24 @@
 /* Begin PBXBuildFile section */
 		A25118152A098E4F0010C28E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25118142A098E4F0010C28E /* AppDelegate.swift */; };
 		A25118172A098E4F0010C28E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25118162A098E4F0010C28E /* SceneDelegate.swift */; };
-		A25118192A098E4F0010C28E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25118182A098E4F0010C28E /* ViewController.swift */; };
-		A251181C2A098E4F0010C28E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A251181A2A098E4F0010C28E /* Main.storyboard */; };
 		A251181E2A098E510010C28E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A251181D2A098E510010C28E /* Assets.xcassets */; };
 		A25118212A098E510010C28E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A251181F2A098E510010C28E /* LaunchScreen.storyboard */; };
+		A2A165502A13805300A144D3 /* CountryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A1654F2A13805300A144D3 /* CountryTableViewController.swift */; };
+		A2A165532A1384C100A144D3 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A165522A1384C100A144D3 /* Country.swift */; };
+		A2A165552A13866600A144D3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A165542A13866600A144D3 /* NetworkManager.swift */; };
+		A2A165582A13B51500A144D3 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = A2A165572A13B51500A144D3 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A25118112A098E4F0010C28E /* RestCountriesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestCountriesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A25118142A098E4F0010C28E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A25118162A098E4F0010C28E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A25118182A098E4F0010C28E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A251181B2A098E4F0010C28E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A251181D2A098E510010C28E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A25118202A098E510010C28E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A25118222A098E510010C28E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2A1654F2A13805300A144D3 /* CountryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewController.swift; sourceTree = "<group>"; };
+		A2A165522A1384C100A144D3 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		A2A165542A13866600A144D3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2A165582A13B51500A144D3 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +60,48 @@
 		A25118132A098E4F0010C28E /* RestCountriesApp */ = {
 			isa = PBXGroup;
 			children = (
-				A25118142A098E4F0010C28E /* AppDelegate.swift */,
-				A25118162A098E4F0010C28E /* SceneDelegate.swift */,
-				A25118182A098E4F0010C28E /* ViewController.swift */,
-				A251181A2A098E4F0010C28E /* Main.storyboard */,
+				A2A1654C2A12D12800A144D3 /* AppDelegate */,
+				A2A1654D2A12D14600A144D3 /* Helper */,
+				A2A165512A1384A200A144D3 /* Model */,
+				A2A1654E2A12D15500A144D3 /* Controller */,
 				A251181D2A098E510010C28E /* Assets.xcassets */,
 				A251181F2A098E510010C28E /* LaunchScreen.storyboard */,
 				A25118222A098E510010C28E /* Info.plist */,
 			);
 			path = RestCountriesApp;
+			sourceTree = "<group>";
+		};
+		A2A1654C2A12D12800A144D3 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A25118142A098E4F0010C28E /* AppDelegate.swift */,
+				A25118162A098E4F0010C28E /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A2A1654D2A12D14600A144D3 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A2A165542A13866600A144D3 /* NetworkManager.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		A2A1654E2A12D15500A144D3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A2A1654F2A13805300A144D3 /* CountryTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A2A165512A1384A200A144D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A2A165522A1384C100A144D3 /* Country.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +120,9 @@
 			dependencies = (
 			);
 			name = RestCountriesApp;
+			packageProductDependencies = (
+				A2A165572A13B51500A144D3 /* SDWebImage */,
+			);
 			productName = RestCountriesApp;
 			productReference = A25118112A098E4F0010C28E /* RestCountriesApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +151,9 @@
 				Base,
 			);
 			mainGroup = A25118082A098E4F0010C28E;
+			packageReferences = (
+				A2A165562A13B51500A144D3 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = A25118122A098E4F0010C28E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +170,6 @@
 			files = (
 				A25118212A098E510010C28E /* LaunchScreen.storyboard in Resources */,
 				A251181E2A098E510010C28E /* Assets.xcassets in Resources */,
-				A251181C2A098E4F0010C28E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +180,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A25118192A098E4F0010C28E /* ViewController.swift in Sources */,
+				A2A165532A1384C100A144D3 /* Country.swift in Sources */,
 				A25118152A098E4F0010C28E /* AppDelegate.swift in Sources */,
+				A2A165552A13866600A144D3 /* NetworkManager.swift in Sources */,
 				A25118172A098E4F0010C28E /* SceneDelegate.swift in Sources */,
+				A2A165502A13805300A144D3 /* CountryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A251181A2A098E4F0010C28E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A251181B2A098E4F0010C28E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A251181F2A098E510010C28E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +328,6 @@
 				INFOPLIST_FILE = RestCountriesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +355,6 @@
 				INFOPLIST_FILE = RestCountriesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,6 +392,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A2A165562A13B51500A144D3 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A2A165572A13B51500A144D3 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2A165562A13B51500A144D3 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A25118092A098E4F0010C28E /* Project object */;
 }
